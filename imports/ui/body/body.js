@@ -27,21 +27,20 @@ Template.body.events({
   'submit .update'(event){
     event.preventDefault();
 
-    const targ = event.target;
-    const updateUrl = targ.text.value;
+    const target = event.target;
+    const url = target.text.value;
+    const _id = target.id;
 
-    Images.update({
-      url
-    })
-  },
-  'delete .delete'(event){
-    event.preventDefault();
-
-    const tar = event.target;
-    const deleteUrl = tar.text.value;
-
-    Images.remove({
+    Images.findAndModify({
+      query: _id,
       url
     })
   }
 });
+Template.body.events({
+  'click .delete'(event){
+    event.preventDefault();
+
+    Images.remove(this._id)
+  }
+})
