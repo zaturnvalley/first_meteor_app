@@ -6,7 +6,7 @@ import './body.html';
 
 Template.body.helpers({
   images() {
-    return Images.find({});
+    return Images.find({}, {sort: {createdAt: -1}});
   }
 });
 
