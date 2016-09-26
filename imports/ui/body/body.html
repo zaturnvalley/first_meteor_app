@@ -4,7 +4,7 @@
     <h1>Image Board</h1>
 
     <form id="new-cat">
-      <input type="text" name="text" placeholder="Enter Cat URL">
+      <input type="text" name="text" placeholder="Enter Img URL">
     </form>
   </header>
 
@@ -17,5 +17,10 @@
 </body>
 
 <template name="image">
+  <form class="update">
+      <input type="text" name="text" placeholder="Update Img URL">
+  </form>
+  <br>
+  <button name="delete" class="delete">Delete</button>
   <li><img src="{{url}}"></li>
 </template>
