@@ -23,7 +23,9 @@ Template.body.events({
     });
 
     target.text.value = '';
-  },
+  }
+});
+Template.body.events({
   'submit .update'(event){
     event.preventDefault();
 
@@ -31,12 +33,12 @@ Template.body.events({
     const url = target.text.value;
     const _id = target.id;
 
-    Images.findAndModify({
-      query: _id,
-      url
-    })
+    Images.update({_id: this._id}, {$set: {url, url}
+  });
+    target.text.value = '';
   }
-});
+})
+
 Template.body.events({
   'click .delete'(event){
     event.preventDefault();
