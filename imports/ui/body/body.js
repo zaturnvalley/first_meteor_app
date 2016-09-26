@@ -9,3 +9,19 @@ Template.body.helpers({
     return Images.find({});
   }
 });
+
+Template.body.events({
+  'submit #new-cat'(event) {
+    event.preventDefault();
+
+    const target = event.target;
+    const url = target.text.value;
+
+    Images.insert({
+      url,
+      createdAt: new Date()
+    });
+
+    target.text.value = '';
+  }
+});
