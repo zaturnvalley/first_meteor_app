@@ -1,6 +1,6 @@
 ## Basic Meteor App
 
 * Uses:
-** Meteor
-** ES6
-** MongoDB
+  * Meteor
+  * ES6
+  * MongoDB
