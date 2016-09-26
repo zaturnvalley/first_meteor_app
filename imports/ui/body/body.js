@@ -6,6 +6,6 @@ import './body.html';
 
 Template.body.helpers({
   images() {
-    return Image.find()
+    return Images.find({});
   }
 });
