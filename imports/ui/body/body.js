@@ -1,6 +1,7 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import { Images } from '../../api/images.js'
+import { Images } from '../../api/images.js';
 
 import './body.html';
 
@@ -19,7 +20,9 @@ Template.body.events({
 
     Images.insert({
       url,
-      createdAt: new Date()
+      createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username
     });
 
     target.text.value = '';
