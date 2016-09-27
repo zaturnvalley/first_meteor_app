@@ -3,10 +3,14 @@
   <div class="container text-center">
   <header>
     {{#if currentUser}}
-    <h2>Hello {{currentUser.username}}</h2>
+      {{#if currentUser.services.facebook}}
+        <h2>Hello {{currentUser.services.facebook.name}}</h2>
+      {{else}}
+        <h2>Hello {{currentUser.username}}</h2>
     <form id="new-cat">
       <input type="text" name="text" placeholder="Enter Img URL">
     </form>
+      {{/if}}
     {{else}}
     <h2>Please Login</h2>
     {{/if}}
