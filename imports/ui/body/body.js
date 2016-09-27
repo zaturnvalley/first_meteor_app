@@ -18,12 +18,7 @@ Template.body.events({
     const target = event.target;
     const url = target.text.value;
 
-    Images.insert({
-      url,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username
-    });
+
 
     target.text.value = '';
   }
