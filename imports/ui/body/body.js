@@ -5,6 +5,10 @@ import { Images } from '../../api/images.js';
 
 import './body.html';
 
+Template.body.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('images');
+});
+
 Template.body.helpers({
   images() {
     return Images.find({}, {sort: {createdAt: -1}});
