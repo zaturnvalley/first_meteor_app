@@ -18,7 +18,7 @@ Template.body.events({
     const target = event.target;
     const url = target.text.value;
 
-
+    Meteor.call('images.insert', url);
 
     target.text.value = '';
   }
