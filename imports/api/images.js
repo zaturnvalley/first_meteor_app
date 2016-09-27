@@ -15,5 +15,9 @@ Meteor.methods({
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username
     })
-  }
+  },
+
+  'images.remove'(imageId){
+    Images.remove(imageId)
+}
 });
